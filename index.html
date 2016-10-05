@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bluenose Instructions</title>
+    <style>
+        body {
+            background-color: #2a2a2a;
+
+        }
+
+        .page {
+            max-width: 1024px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #3f3f3f;
+
+        }
+        .header {
+            width: 100%;
+            background-color: #2DAAE4;
+            padding: 20px 0;
+        }
+        .header h1 {
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 48pt;
+            color: white;
+            width: 728px;
+            display: inline-block;
+            text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+        }
+        .header .logos_and_title {
+            width: 924px;
+            margin-left: 50px;
+        }
+
+        .header img {
+            width: 98px;
+            height: 98px;
+        }
+
+        .navbar {
+            background-color: #3f3f3f;
+            color: white;
+            font-family: sans-serif;
+            width: 200px;
+            float: left;
+            border-bottom: 1px solid black;
+        }
+
+        .os {
+            border-top: 1px solid black;
+        }
+
+        .ostitle {
+            display: block;
+            font-weight: bold;
+            font-size: 14pt;
+            padding: 7px 0 7px 5px;
+        }
+
+        .ositem {
+            display: block;
+            font-weight: bold;
+            font-size: 12pt;
+
+        }
+
+        .ositem a:hover {
+            background-color: #103b50;
+        }
+
+        .ositem a.selected {
+            background-color: #206a91;
+        }
+
+        .ositem a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 7px 0 7px 15px;
+        }
+
+        .content {
+            max-width: 784px;
+            float: right;
+            padding: 5px 20px;
+            background-color: #EFEFEF;
+            min-height: 294px;
+        }
+
+        .demo img {
+            max-width: 750px;
+            border: 5px solid black;
+            margin: 0 auto;
+            display: inherit;
+        }
+
+
+        .instruction {
+            display: block;
+            text-align: center;
+            margin: 5px auto 5px auto;
+        }
+
+        .instructionList li {
+            background-color: #F8F8F8;
+            margin: 20px 5px;
+            box-shadow: 2px 2px lightgrey;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        (function() {
+            var sections = {},
+                    links = {},
+                    displaySection = function () {
+                        var section = sections[location.hash],
+                                sectionID,
+                                linkID,
+                                link = links[location.hash];
+                        if (section === undefined) {
+                            section = sections['#intro']
+                        }
+                        for (sectionID in sections) {
+                            if (sections.hasOwnProperty(sectionID) && sectionID !== location.hash) {
+                                sections[sectionID].style.display = "None";
+                            }
+                        }
+                        section.style.display = "block";
+                        for (linkID in links) {
+                            if (links.hasOwnProperty(linkID) && linkID !== location.hash) {
+                                links[linkID].className = "";
+                            }
+                        }
+                        section.style.display = "block";
+                        if (link !== undefined) {
+                            link.className="selected";
+                        }
+                    };
+            document.addEventListener("DOMContentLoaded", function() {
+                var sectionElements = document.querySelectorAll("section"),
+                        section,
+                        sectionID,
+                        linkElements = document.querySelectorAll(".ositem a"),
+                        link,
+                        linkID,
+                        href;
+                for (sectionID in sectionElements) {
+                    if (sectionElements.hasOwnProperty(sectionID)) {
+                        section = sectionElements[sectionID];
+                        sections['#' + section.id] = section;
+                    }
+                }
+
+                for (linkID in linkElements) {
+                    if (linkElements.hasOwnProperty(linkID)) {
+                        link = linkElements[linkID];
+                        href = link.href.split('#')[1];
+                        links['#' + href] = link;
+                    }
+                }
+                displaySection();
+
+            });
+
+            window.addEventListener("hashchange", displaySection)
+        })()
+    </script>
+</head>
+<body>
+<div class="page">
+    <div class="header"><div class="logos_and_title"> <img src="images/css_logo.png"><h1>Accessing Bluenose</h1><img src="images/dal_logo.png"></div></div>
+    <div class="navbar">
+        <div class="os">
+            <span class="ostitle">Windows</span>
+            <span class="ositem"><a href="#winshell">Shell access</a></span>
+            <span class="ositem"><a href="#winfile">File access</a></span>
+        </div>
+        <div class="os">
+            <span class="ostitle">OS X</span>
+            <span class="ositem"><a href="#macshell">Shell access</a></span>
+            <span class="ositem"><a href="#macfile">File access</a></span>
+        </div>
+        <div class="os">
+            <span class="ostitle">Linux (Ubuntu)</span>
+            <span class="ositem"><a href="#linshell">Shell access</a></span>
+            <span class="ositem"><a href="#linfile">File access</a></span>
+        </div>
+    </div>
+    <div class="content">
+        <article>
+            <section  id="intro">
+                <p>Welcome to the Bluenose tips page.  Here you will find instructions on how to connect to bluenose for issuing commands (shell access) or manipulating files (file access) for your operating system.  Choose your operating system and type of access from the menu to the left.</p>
+            </section>
+        </article>
+        <article id="windows">
+            <section id="winshell">
+                <h2>Windows</h2>
+                <h3>Shell Access</h3>
+                <h4>First time</h4>
+                <ol>
+                    <li>Download PuTTY (Dalhousie computers already have this downloaded)</li>
+                    <li>Open PuTTY</li>
+                    <li>Enter &quot;&lt;csname&gt;@bluenose.cs.dal.ca&quot; in the hostname box, where &lt;csname&gt; is the name you use for logging in to moodle.</li>
+                    <li>Make sure SSH is selected in the Connection Type Radio Buttons</li>
+                    <li>Enter &quot;Bluenose&quot; in the &quot;Saved Sessions&quot; box</li>
+                    <li>Press &quot;Save&quot; to save the session for the next time</li>
+                    <li>Press &quot;Open&quot; to connect</li>
+                    <li>Store the new SSH key in the cache</li>
+                    <li>Enter the password you use on moodle</li>
+                    <li>You can now issue shell commands to bluenose</li>
+                </ol>
+                <h4>Subsequent times</h4>
+                <ol>
+                    <li>Open PuTTY</li>
+                    <li>Select &quot;Bluenose&quot; from the list of saved sessions</li>
+                    <li>Press &quot;Load&quot; to open the session</li>
+                    <li>Press &quot;Open&quot; to connect</li>
+                    <li>Enter the password you use on moodle</li>
+                    <li>You can now issue shell commands to bluenose</li>
+                </ol>
+            </section>
+            <section id="winfile">
+                <h2>Windows</h2>
+                <h3>File Access</h3>
+                <h4>First Time</h4>
+                <ol>
+                    <li>Download and install WinSCP (Dalhousie computers already have this downloaded)</li>
+                    <li>Launch WinSCP</li>
+                    <li>Select &quot;New Site&quot;</li>
+                    <li>Select &quot;SFTP&quot; under &quot;File protocol&quot;</li>
+                    <li>Enter &quot;bluenose.cs.dal.ca&quot; under &quot;Host name&quot;</li>
+                    <li>Enter the username you use on moodle under &quot;User name&quot;</li>
+                    <li>Enter the password you use on moodle in the &quot;Password&quot; field</li>
+                    <li>Press &quot;Save&quot; to store the session for next time.</li>
+                    <li>In the save dialog, press &quot;OK&quot; to save the session</li>
+                    <li>Press &quot;Login&quot;</li>
+                    <li>Accept the SSH key and store it in the cache</li>
+                    <li>You can now drag and drop files from windows into bluenose, or from bluenose into the file system</li>
+                    <li>Any files in the &quot;public_html&quot; folder will be accessible at http://web.cs.dal.ca/~&lt;csname&gt; where &lt;csname&gt; is the username you logged in with</li>
+                </ol>
+                <h4>Subsequent times</h4>
+                <ol>
+                    <li>Launch WinSCP</li>
+                    <li>From the site list, choose whatever you names your session the first time</li>
+                    <li>Press &quot;Login&quot;</li>
+                    <li>You can now drag and drop files from windows into bluenose, or from bluenose into the file system</li>
+                    <li>Any files in the &quot;public_html&quot; folder will be accessible at http://web.cs.dal.ca/~&lt;csname&gt; where &lt;csname&gt; is the username you logged in with</li>
+                </ol>
+            </section>
+        </article>
+        <article id="linux">
+            <section id="linshell">
+                <h2>Linux (Ubuntu)</h2>
+                <p>These instructions are for Ubuntu, but should be similar for other Linux distros.</p>
+                <h3>Shell Access</h3>
+                <ol class="instructionList">
+                    <li><span class="instruction"> Open the terminal</span><div class="demo"><img src="images/linux/shell1terminal.png" /></div></li>
+                    <li><span class="instruction"> Type &quot;ssh &lt;csname&gt;@bluenose.cs.dal.ca&quot; and press enter, where &lt;csname&gt; is the username you use on Moodle</span><div class="demo"><img src="images/linux/shell2ssh.png" /></div></li>
+                    <li><span class="instruction"> Accept the key fingerprint</span><div class="demo"><img src="images/linux/shell3key.png" /></div></li>
+                    <li><span class="instruction"> Type your password used on mooodle and press enter (no characters will appear while you are typing)</span><div class="demo"><img src="images/linux/shell4password.png" /></div></li>
+                    <li><span class="instruction"> You can now issue shell commands to bluenose</span><div class="demo"><img src="images/linux/shell5in.png" /></div></li>
+                </ol>
+            </section>
+            <section id="linfile">
+                <h2>Linux (Ubuntu)</h2>
+                <p>These instructions are for Ubuntu, but should be similar for other Linux distros.</p>
+                <h3>File Access</h3>
+                <ol>
+                    <li>Go to the desktop, or any file window</li>
+                    <li>From the &quot;Go&quot; menu, select &quot;Enter Location&quot; (or press ctrl-L)</li>
+                    <li>Type &quot;sftp://&lt;csname&gt;@bluenose.cs.dal.ca/users/cs/&lt;csname&gt;&quot; and press enter, where &lt;csname&gt; is the username you use on Moodle</li>
+                    <li>(Optional) From the bookmark menu, select &quot;Bookmark this location&quot; or press ctrl-B</li>
+                    <li>You may now copy files in or out of this window like any other file window</li>
+                </ol>
+            </section>
+
+        </article>
+    </div>
+</div>
+
+</body>
+</html>
