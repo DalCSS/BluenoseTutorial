@@ -85,7 +85,7 @@ body {
 }
 
 .demo img {
-    max-width: 750px;
+    max-width: 650px;
     border: 5px solid black;
     margin: 0 auto;
     display: inherit;
