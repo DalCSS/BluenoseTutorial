@@ -29,14 +29,29 @@
         <article id="linux">
             <section id="linfile">
                 <h2>Linux (Ubuntu)</h2>
-                <p>These instructions are for Ubuntu, but should be similar for other Linux distros.</p>
+                <p>These instructions are for Ubuntu, check what the command to install filezilla is for your distro.</p>
                 <h3>File Access</h3>
-                <ol>
-                    <li>Go to the desktop, or any file window</li>
-                    <li>From the &quot;Go&quot; menu, select &quot;Enter Location&quot; (or press ctrl-L)</li>
-                    <li>Type &quot;sftp://&lt;csname&gt;@bluenose.cs.dal.ca/users/cs/&lt;csname&gt;&quot; and press enter, where &lt;csname&gt; is the username you use on Moodle</li>
-                    <li>(Optional) From the bookmark menu, select &quot;Bookmark this location&quot; or press ctrl-B</li>
-                    <li>You may now copy files in or out of this window like any other file window</li>
+                <h4>First time</h4>
+                <ol class="instructionList">
+                  <li><span class="instruction"> Search for the terminal, and open it.</span><div class="demo"><img src="images/linux/shell1terminal.png" /></div></li>
+                    <li><span class="instruction">Run the command &quot;sudo apt-get install filezilla&quot;.</span><div class="demo"><img src="images/linux/file1.png" /></div></li>
+                    <li><span class="instruction">Enter your password</span><div class="demo"><img src="images/linux/file2.png" /></div></li>
+                    <li><span class="instruction">Agree to any requirments</span><div class="demo"><img src="images/linux/file3.png" /></div></li>
+                    <li><span class="instruction">Search for filezilla, and open it.</span><div class="demo"><img src="images/linux/file5.png" /></div></li>
+                    <li><span class="instruction">Open the Site manager</span><div class="demo"><img src="images/linux/file6.png" /></div></li>
+                    <li><span class="instruction">Add a new site, name it bluenose</span><div class="demo"><img src="images/linux/file7.png" /></div></li>
+                    <li><span class="instruction">Host is bluenose.cs.dal.ca, Port 22, Protocol: SFTP, Logon Type: Normal, User/Password is your csid information</span><div class="demo"><img src="images/linux/file8.png" /></div></li>
+                    <li><span class="instruction">Click Connect</span><div class="demo"><img src="images/linux/file9.png" /></div></li>
+                    <li><span class="instruction">Accept the host key, and allways trust</span><div class="demo"><img src="images/linux/file10.png" /></div></li>
+                    <li><span class="instruction">You can now transfer files.  Your computer is on the left, and the school server is on the right.</span><div class="demo"><img src="images/linux/file11.png" /></div></li>
+                </ol>
+                <h4>Subsequent times</h4>
+                <ol class="instructionList">
+                    <li><span class="instruction">Open FileZila</span><div class="demo"><img src="images/linux/file5.png" /></div></li>
+                    <li><span class="instruction">Open the Site manager</span><div class="demo"><img src="images/linux/file6.png" /></div></li>
+                    <li><span class="instruction">Select bluenose</span><div class="demo"><img src="images/linux/file8.png" /></div></li>
+                    <li><span class="instruction">Click Connect</span><div class="demo"><img src="images/linux/file9.png" /></div></li>
+                    <li><span class="instruction">You can now transfer files.  Your computer is on the left, and the school server is on the right.</span><div class="demo"><img src="images/linux/file10.png" /></div></li>
                 </ol>
             </section>
         </article>
