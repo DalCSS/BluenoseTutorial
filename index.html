@@ -1,37 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Bluenose Instructions</title>
-    <link href="css/style.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="Dalhousie University Bluenose Tutorial">
+    <meta name="author" content="Brandon Poole &amp; Raphael BN">
+
+    <title>Bluenose Tutorial</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-<div class="page">
-    <a href="."><div class="header"><div class="logos_and_title"> <img src="images/css_logo.png"><h1>Accessing Bluenose</h1><img src="images/dal_logo.png"></div></div></a>
-    <div class="navbar">
-        <div class="os">
-            <span class="ostitle">Windows</span>
-            <span class="ositem"><a href="winshell.html">Shell access</a></span>
-            <span class="ositem"><a href="winfile.html">File access</a></span>
+
+    <nav class="navbar navbar-default" style="margin-bottom: 0px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" style="width: 20px; height: 20px" src="images/css_logo.png">
+          </a>
         </div>
-        <div class="os">
-            <span class="ostitle">OS X</span>
-            <span class="ositem"><a href="macshell.html">Shell access</a></span>
-            <span class="ositem"><a href="macfile.html">File access</a></span>
+      </div>
+    </nav>
+
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <p>
+                        Start Bootstrap
+                    </p>
+                </li>
+                <li>
+                    <a href="#">Shell Access</a>
+                </li>
+                <li>
+                    <a href="#">File Access</a>
+                </li>
+                <li>
+                    <a href="#">Shell Access</a>
+                </li>
+                <li>
+                    <a href="#">File Access</a>
+                </li>
+                <li>
+                    <a href="#">Shell Access</a>
+                </li>
+                <li>
+                    <a href="#">File Access</a>
+                </li>
+            </ul>
         </div>
-        <div class="os">
-            <span class="ostitle">Linux (Ubuntu)</span>
-            <span class="ositem"><a href="linshell.html">Shell access</a></span>
-            <span class="ositem"><a href="linfile.html">File access</a></span>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Simple Sidebar</h1>
+                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
-    <div class="content">
-        <article>
-            <section  id="intro">
-                <p>Welcome to the Bluenose tips page.  Here you will find instructions on how to connect to bluenose for issuing commands (shell access) or manipulating files (file access) for your operating system.  Choose your operating system and type of access from the menu to the left.</p>
-            </section>
-        </article>
-    </div>
-</div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
 </body>
+
 </html>
