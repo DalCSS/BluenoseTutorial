@@ -19,7 +19,7 @@
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
+    padding-left: 200px;
 }
 
 #sidebar-wrapper {
@@ -58,7 +58,7 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 200px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -89,20 +89,18 @@
 .sidebar-nav > .sidebar-brand {
     height: 65px;
     font-size: 18px;
-    line-height: 60px;
+    line-height: 80px;
 }
 
 .sidebar-nav > .sidebar-brand p {
     color: #000;
 }
 
-.sidebar-nav > .sidebar-brand a:hover {
 
-}
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 200px;
     }
 
     #wrapper.toggled {
@@ -110,7 +108,7 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 200px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
