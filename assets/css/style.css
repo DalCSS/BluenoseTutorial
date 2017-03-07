@@ -1,15 +1,5 @@
-body {
-    background-color: #2a2a2a;
 
-}
 
-.page {
-    max-width: 1024px;
-    margin: 0 auto;
-    overflow: hidden;
-    background-color: #3f3f3f;
-
-}
 .header {
     width: 100%;
     background-color: #2DAAE4;
@@ -34,51 +24,11 @@ body {
     height: 98px;
 }
 
-.navbar {
-    background-color: #3f3f3f;
-    color: white;
-    font-family: sans-serif;
-    width: 200px;
-    float: left;
-    border-bottom: 1px solid black;
-}
 
-.os {
-    border-top: 1px solid black;
-}
-
-.ostitle {
-    display: block;
-    font-weight: bold;
-    font-size: 14pt;
-    padding: 7px 0 7px 5px;
-}
-
-.ositem {
-    display: block;
-    font-weight: bold;
-    font-size: 12pt;
-
-}
-
-.ositem a:hover {
-    background-color: #103b50;
-}
-
-.ositem a.selected {
-    background-color: #206a91;
-}
-
-.ositem a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 7px 0 7px 15px;
-}
 
 .content {
     max-width: 784px;
-    float: right;
+    margin-top: 3.5em;
     padding: 5px 20px;
     background-color: #EFEFEF;
     min-height: 294px;
