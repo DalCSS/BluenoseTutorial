@@ -3,7 +3,6 @@ How to get access to the bluenose server at Dalhousie university.  This page was
 
 ## TODO
 
-* Windows Shell access pictures and general update to instructions.
 * Windows File Access to be switched over to filezilla, and pictures
 * Windows File Access through labs with pictures.
 * Homepage to give instructions on how to get a csid
